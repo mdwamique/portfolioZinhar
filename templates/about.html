@@ -1,0 +1,51 @@
+{% include "header.html" %}
+
+<head>
+    <style>
+        .skills{
+            color: #fff;
+            margin-top: 50px;
+            margin-left: 105px;
+        }
+        h2{
+            margin-left: 15px;
+        }
+
+        .image{
+            margin-top: -350px;
+            margin-left: 750px;
+        }
+    </style>
+</head>
+<body>
+    <section class="about">
+        <div class="about-me">
+            <h5>
+                I am a passionate Mechanical Engineering student with a <br> keen interest in software development, particularly in <br>Python.
+                Currently in my second year of B.Tech, I love<br> to expand my knowledge and skills in both engineering <br>
+                principles and programming languages. I love exploring<br> new technologies and solving complex problems.
+            </h5>
+        </div>
+    </section>
+
+    <section class="experience">
+        <div class="skills">
+            <h2>
+                SKILLS
+            </h2>
+            <ul>
+                <li>
+                PYTHON DEVELOPER
+                </li>
+                <li>
+                Full stack WEB-DEVELOPER
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="image">
+        <img width="550px" height="550px" src="{{url_for('static', filename='images/education.png')}}" class="img-fluid" alt="satellite">
+    </section>
+ </body>
+{% include "footer.html" %}
