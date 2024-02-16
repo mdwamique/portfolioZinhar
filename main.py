@@ -1,13 +1,14 @@
 import smtplib
 from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap5
+import os
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '8BYkEfBA6O6cornWlSihBXox7C0sKR6b'
 Bootstrap5()
 
-G_MAIL = "99testabdullah@gmail.com"
-G_PASSWORD = "rpmy puhd qwpp ffrj"
+MAIL = os.environ.get("G_MAIL")
+PASSWORD = os.environ.get("G_PASSWORD")
 
 
 @app.route('/', methods=["GET", "POST"])
@@ -33,8 +34,8 @@ def send_email(name, email, phone, message):
     email_message = f"Subject:New Message\n\nName: {name}\nEmail: {email}\nPhone: {phone}\nMessage:{message}"
     with smtplib.SMTP("smtp.gmail.com") as connection:
         connection.starttls()
-        connection.login(G_MAIL, G_PASSWORD)
-        connection.sendmail(G_MAIL, G_MAIL, email_message)
+        connection.login(MAIL, PASSWORD)
+        connection.sendmail(MAIL, MAIL, email_message)
 
 
 if __name__ == "__main__":
