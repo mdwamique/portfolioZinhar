@@ -13,7 +13,7 @@ PASSWORD = os.environ.get("G_PASSWORD")
 
 @app.route('/', methods=["GET", "POST"])
 def introduce():
-    return render_template('resume.html')
+    return render_template('index.html')
 
 
 @app.route('/about', methods=["GET", "POST"])
